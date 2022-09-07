@@ -64,7 +64,7 @@ const GenerateHandler = ()=>{
           <div style={{ marginTop: "60px" }}>OR</div>
       </Or>
       <Background>
-        <Button onClick={ suggestMysteryWorouts } disabled={ !selectedWorkoutTime }><IoMdFitness/>&nbsp;Give me Mystery Workouts</Button>
+        <Button onClick={ suggestMysteryWorouts } ><IoMdFitness/>&nbsp;Give me Mystery Workouts</Button>
       </Background></>}
     </Container>
   )
@@ -95,6 +95,7 @@ const Container = styled.div`
   background: -moz-linear-gradient(90deg, rgba(214,214,202,0.7707457983193278) 61%, rgba(1,1,13,0) 100%);
   background: -webkit-linear-gradient(90deg, rgba(214,214,202,0.7707457983193278) 61%, rgba(1,1,13,0) 100%);
   background: linear-gradient(90deg, rgba(214,214,202,0.7707457983193278) 61%, rgba(1,1,13,0) 100%);
+  justify-content: space-around;
   @media (max-width: 860px) {
     flex-direction: column;
     align-items: center;
@@ -129,7 +130,6 @@ const Background = styled.div`
       margin-top: 20px !important;
     }
   }
-  margin-left: 100px;
 `;
 
 const Input = styled.div`

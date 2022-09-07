@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import { getMysteryExercises } from '../services/exercises';
 import { useNavigate } from 'react-router-dom';
-import singleWorkout from './SingleWorkout';
-import singleExercise from './SingleExercise';
+import SingleWorkout from './SingleWorkout';
+import SingleExercise from './SingleExercise';
 import { MdClose } from 'react-icons/md';
 
 let workouts = [];
@@ -25,6 +25,7 @@ const  Mystery= ({ _setLoading })=> {
 
    useEffect(()=> {
         initializeExercises();
+       console.log("hello")
    }, []);
 
    const selectWorkout = (num)=> {
@@ -49,7 +50,7 @@ const  Mystery= ({ _setLoading })=> {
             </Title>
             <Workout>
                 {randomWorkouts?.map((w,i)=> {
-                    return <singleWorkout key= { 'random_'+i } 
+                    return <SingleWorkout key= { 'random_'+i } 
                     _number= { i }
                     _viewWorkout= { viewWorkout }
                     _selectWorkout= { selectWorkout } />;
@@ -65,7 +66,7 @@ const  Mystery= ({ _setLoading })=> {
                     <Workout>
                         {
                             randomWorkouts[currentWorkoutNumber]?.map((ex,i)=> {
-                                return <singleExercise key= { 'view_'+i } _exercise= { ex }
+                                return <SingleExercise key= { 'view_'+i } _exercise= { ex }
                                 _readOnly= { true } />;
                             })
                         }  
